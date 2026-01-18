@@ -1,6 +1,6 @@
 package vechilefleet.model;
 
-public class Vehicle {
+public abstract class Vehicle {
     String name;
     double purchasePrice; 
     int currentMileage; 
@@ -13,7 +13,19 @@ public class Vehicle {
         this.name = name; 
         this.purchasePrice = purchasePrice;
         this.currentMileage = currentMileage;
-
+    };
+    public abstract String getCategory();
+    public void getCurrentMileage(){
         
     }
+    public double getPurchasePrice(){
+        return 0.0;
+    }
+    public String toString(){
+        return " ";
+    }
+    public int compareTo(Vehicle vehicle){
+        return 1;
+    }
+
 }
