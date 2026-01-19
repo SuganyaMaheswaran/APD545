@@ -15,11 +15,12 @@ public abstract class Vehicle {
         this.currentMileage = currentMileage;
     };
     public abstract String getCategory();
-    public void getCurrentMileage(){
+    public int getCurrentMileage(){
+        return currentMileage; 
         
     }
     public double getPurchasePrice(){
-        return 0.0;
+        return purchasePrice;
     }
     public String toString(){
         return " ";
