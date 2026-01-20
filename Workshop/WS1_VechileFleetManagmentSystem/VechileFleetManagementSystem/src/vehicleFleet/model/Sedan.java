@@ -1,4 +1,4 @@
-package vechiclefleet.model;
+package vehicleFleet.model;
 
 public class Sedan extends PassengerVehicle{
     
@@ -11,6 +11,22 @@ public class Sedan extends PassengerVehicle{
   }
   public String getCategory(){
     return "Economy";
+  }
+  @Override
+  public int getServiceInterval() {
+    return this.serviceInterval;
+  }
+  @Override
+  public double getMaintenanceCost() {
+    return this.maintenanceCost; 
+  }
+  @Override
+  public String getPrimaryFunction() {
+    return this.primaryFunction;
+  }
+  @Override
+  public String getFuelType() {
+   return this.fuelType;
   }
 
 }

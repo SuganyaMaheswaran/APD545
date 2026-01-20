@@ -1,7 +1,8 @@
-package vechiclefleet.model;
-
-public abstract class Vehicle {
-    String name;
+package vehicleFleet.model;
+import vehicleFleet.interfaces.IVehicleMaintenance;
+import vehicleFleet.interfaces.IVehicleOperations; 
+public abstract class Vehicle implements IVehicleMaintenance, IVehicleOperations {
+    public String name;
     double purchasePrice; 
     int currentMileage; 
     int serviceInterval;
@@ -9,7 +10,7 @@ public abstract class Vehicle {
     String primaryFunction;
     String fuelType; 
 
-    public Vehicle(String name, double purchasePrice, int currentMileage){
+    public Vehicle(String name, double purchasePrice, int currentMileage) {
         this.name = name; 
         this.purchasePrice = purchasePrice;
         this.currentMileage = currentMileage;
@@ -23,10 +24,11 @@ public abstract class Vehicle {
         return purchasePrice;
     }
     public String toString(){
-        return " ";
+        return name + " - $" + purchasePrice;
     }
-    public int compareTo(Vehicle vehicle){
-        return 1;
+    public int compareTo(Vehicle other){
+        return this.currentMileage - other.currentMileage;
     }
+
 
 }

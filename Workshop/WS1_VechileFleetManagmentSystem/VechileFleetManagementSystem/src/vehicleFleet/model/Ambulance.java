@@ -1,4 +1,4 @@
-package vechiclefleet.model;
+package vehicleFleet.model;
 
 public class Ambulance extends SpecializedVehicle{
     public Ambulance(int currentMileage){
@@ -10,6 +10,22 @@ public class Ambulance extends SpecializedVehicle{
     }
     public String getCategory(){
         return "Specialized";
+    }
+    @Override
+    public int getServiceInterval() {
+        return this.serviceInterval;
+    }
+    @Override
+    public double getMaintenanceCost() {
+        return this.maintenanceCost;
+    }
+    @Override
+    public String getPrimaryFunction() {
+        return this.primaryFunction;
+    }
+    @Override
+    public String getFuelType() {
+      return this.fuelType;
     }
     
 }
