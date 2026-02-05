@@ -76,7 +76,7 @@ public class VehicleController {
         if (fleet.isEmpty())
             return;
 
-        Vehicle nextVehicleForService = Collections.min(this.fleet);
+        Vehicle nextVehicleForService = Collections.max(this.fleet);
         view.displayNextVehicleForMaintenance(nextVehicleForService);
     }
 

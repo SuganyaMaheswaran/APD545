@@ -43,7 +43,7 @@ public abstract class Vehicle implements IVehicleMaintenance, IVehicleOperations
     }
 
     public int compareTo(Vehicle other) {
-        return Integer.compare(this.mileageToNextService(), other.mileageToNextService());
+        return Integer.compare(this.getCurrentMileage(), other.getCurrentMileage());
     }
 
     public int mileageToNextService() {
