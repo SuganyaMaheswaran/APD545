@@ -1,0 +1,87 @@
+/* Table overall styling */
+.table-view {
+    -fx-background-color: white;       /* table background */
+    -fx-border-color: #f5f5f7;         /* table border */
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-text-fill: black;  
+}
+
+/* Table header container */
+.table-view .column-header-background {
+    -fx-background-color: #f5f5f7;     /* header background */
+    -fx-border-color: transparent;
+}
+
+/* Header buttons (text) */
+.table-view .column-header .label {
+    -fx-background-color: #f5f5f7;     /* same as header */
+    -fx-text-fill: black;              /* header text color */
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER_LEFT;
+}
+
+/* Remove hover/pressed grey effect on header */
+.table-view .column-header .label:hover,
+.table-view .column-header .label:pressed {
+    -fx-background-color: #f5f5f7;
+}
+
+/* Table cells */
+.table-view .table-cell {
+    -fx-background-color: white;       /* all cells white */
+    -fx-border-color: transparent;     /* remove vertical borders */
+}
+
+/* Remove alternating row colors */
+.table-row-cell {
+    -fx-background-color: white;
+}
+
+/* Optional: subtle horizontal lines between rows */
+.table-view .table-row-cell {
+    -fx-border-color: #f5f5f7;        /* subtle horizontal line color */
+    -fx-border-width: 0 0 1 0;        /* bottom line only */
+}
+
+/* Remove selection highlight */
+.table-view .table-row-cell:selected {
+    -fx-background-color: white;
+}
+
+/* Remove focus highlight */
+.table-view:focused .table-row-cell:selected {
+    -fx-background-color: white;
+}
+/* Table cells: make each row 35px high */
+.table-view .table-row-cell {
+    -fx-background-color: white;      /* cell background */
+    -fx-border-color: #f5f5f7;        /* horizontal line only */
+    -fx-border-width: 0 0 1 0;        /* only bottom border for separation */
+    -fx-pref-height: 35px;            /* sets the row height */
+    -fx-padding: 0 5 0 5;             /* optional: left/right padding */
+}
+
+/* Center cell content vertically */
+.table-view .table-cell {
+    -fx-alignment: CENTER_LEFT;       /* adjust as needed: LEFT, CENTER, RIGHT */
+}
+
+/* Remove sort arrow and default click style */
+.table-view .column-header .arrow {
+    -fx-background-color: transparent; /* removes arrow background */
+    -fx-shape: "";                      /* removes triangle arrow */
+    -fx-padding: 0;
+}
+
+.table-view .column-header:focused,
+.table-view .column-header:pressed,
+.table-view .column-header:hover {
+    -fx-background-color: #f5f5f7; /* keep your header color */
+    -fx-border-color: #f5f5f7;     /* keep border consistent */
+}
+
+/* Optional: remove the sort arrow completely */
+.table-view .column-header .sort-arrow {
+    -fx-opacity: 0;
+}

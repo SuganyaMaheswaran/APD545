@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="controller.MainController" style=" -fx-background-color:#ffffff;-fx-text-fill:1d1d1f"   maxWidth="600" 
+           maxHeight="400" >
+
+    <!-- Top: Title -->
+    <top>
+        <HBox style="-fx-padding: 10;" alignment="CENTER_LEFT" spacing="10">
+            <Label text="Vehicle Fleet Management" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+        </HBox>
+    </top>
+
+    <!-- Left: Buttons -->
+    <left>
+        <VBox spacing="10" style="-fx-padding: 30 20 10 30;" alignment="TOP_LEFT">
+            <Button fx:id="btnAddVehicle" text="Add Vehicle" onAction="#showAddVehicleForm" prefWidth="150"/>
+            <Button fx:id="btnAddUsage" text="Add Usage Log" onAction="#showAddUsageForm" prefWidth="150"/>
+            <Button fx:id="btnAddMaintenance" text="Add Maintenance Record" onAction="#showAddMaintenanceForm" prefWidth="150"/>
+        </VBox>
+    </left>
+
+    <!-- Center: Form Container -->
+    <center>
+        <StackPane fx:id="centerPane" style="-fx-padding: 0 10 0 10;" alignment="TOP_CENTER">
+            <!-- The controller will add forms dynamically here -->
+        </StackPane>
+    </center>
+
+</BorderPane>

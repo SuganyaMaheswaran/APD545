@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<GridPane xmlns:fx="http://javafx.com/fxml" 
+          fx:controller="controller.forms.AddVehicleFormController"
+          hgap="10" vgap="10" 
+          style="-fx-padding: 20; 
+                 -fx-border-width: 2; 
+                 -fx-border-radius: 10; 
+                 -fx-background-radius: 10; 
+                 -fx-background-color: #f5f5f7;"
+          maxWidth="500"
+          maxHeight="400">
+    <!-- Form Title -->
+    <Label text="Add Vehicle" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2"
+           alignment="CENTER_LEFT" style="-fx-padding: 0 0 0 0;">
+        <font>
+            <Font name="System Bold" size="20"/>
+        </font>
+    </Label>
+
+    <!-- 2 equal columns -->
+    <columnConstraints>
+        <ColumnConstraints hgrow="ALWAYS" percentWidth="50"/>
+        <ColumnConstraints hgrow="ALWAYS" percentWidth="50"/>
+    </columnConstraints>
+   
+    <!-- Make -->
+    <Label text="Make:" GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.columnSpan="2"/>
+    <ComboBox fx:id="cmbMake" GridPane.columnIndex="0" GridPane.rowIndex="2" GridPane.columnSpan="2" maxWidth="500"
+     style="-fx-background-color: white; -fx-border-radius: 5;  -fx-pref-height: 35;" />
+
+    <!-- Model -->
+    <Label text="Model:" GridPane.columnIndex="0" GridPane.rowIndex="3" GridPane.columnSpan="2"/>
+    <ComboBox fx:id="cmbModel" GridPane.columnIndex="0" GridPane.rowIndex="4" GridPane.columnSpan="2" maxWidth="500"
+     style="-fx-background-color: white; -fx-border-radius: 5;  -fx-pref-height: 35;"/>
+
+    <!-- Year -->
+    <Label text="Year:" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+    <TextField fx:id="txtYear" GridPane.columnIndex="0" GridPane.rowIndex="6" promptText="Year" maxWidth="500"
+     style="-fx-background-color: white; -fx-border-radius: 5;  -fx-pref-height: 35;"/>
+
+    <!-- Type -->
+    <Label text="Type:" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+    <ComboBox fx:id="cmbType" GridPane.columnIndex="1" GridPane.rowIndex="6" promptText="Select Type" maxWidth="500"
+     style="-fx-background-color: white; -fx-border-radius: 5;  -fx-pref-height: 35;"/>
+
+    <!-- Buttons -->
+    <HBox spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="7" GridPane.columnSpan="2" alignment="CENTER_RIGHT" maxWidth="500" style="-fx-padding:20 0 0 0">
+        <Button text="Cancel" fx:id="btnCancel" onAction="#clearForm"/>
+        <Button text="Submit" fx:id="btnSubmit" onAction="#onSubmit"/>
+    </HBox>
+
+</GridPane>
