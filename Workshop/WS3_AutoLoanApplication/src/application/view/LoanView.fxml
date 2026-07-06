@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="20" styleClass="content-area" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.LoanController">
+      
+    <padding>
+        <Insets bottom="30" left="30" right="30" top="30" />
+    </padding>
+
+    <!-- Page Header -->
+    <VBox spacing="5">
+        <Label styleClass="header-text" text="Loan Application" />
+        <Label styleClass="body-text" text="Enter customer and vehicle details to calculate amortization." />
+    </VBox>
+
+    <GridPane hgap="30" vgap="20" VBox.vgrow="ALWAYS">
+        <columnConstraints>
+            <ColumnConstraints prefWidth="300" /> 
+            <ColumnConstraints prefWidth="300" /> 
+            <ColumnConstraints hgrow="ALWAYS" prefWidth="400" />
+        </columnConstraints>
+        
+        <rowConstraints>
+            <RowConstraints vgrow="ALWAYS" /> <!-- Row 0: Form content -->
+            <RowConstraints vgrow="ALWAYS" />  <!-- Row 1: Button bar -->
+        </rowConstraints>
+        
+        <!-- Column 0: Customer & Vehicle -->
+        <VBox spacing="20" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <VBox spacing="15">
+                <Label styleClass="sub-header-text" text="Customer Information" />
+                <TextField fx:id="txtName" promptText="Name" />
+                <TextField fx:id="txtPhone" promptText="Phone" />
+                <TextField fx:id="txtCity" promptText="City" />
+                <ComboBox fx:id="cmbProvince" maxWidth="Infinity" promptText="Province" />
+            </VBox>
+            <VBox spacing="15">
+                <Label styleClass="sub-header-text" text="Vehicle Information" />
+                <HBox spacing="15">
+                    <RadioButton fx:id="rbCar" text="Car"><toggleGroup><ToggleGroup fx:id="vehicleTypeGroup" /></toggleGroup></RadioButton>
+                    <RadioButton fx:id="rbTruck" text="Truck" toggleGroup="$vehicleTypeGroup" />
+                    <RadioButton fx:id="rbVan" text="Family Van" toggleGroup="$vehicleTypeGroup" />
+                </HBox>
+                <HBox spacing="15">
+                    <RadioButton fx:id="rbNew" text="New"><toggleGroup><ToggleGroup fx:id="conditionGroup" /></toggleGroup></RadioButton>
+                    <RadioButton fx:id="rbUsed" text="Used" toggleGroup="$conditionGroup" />
+                </HBox>
+                <TextField fx:id="txtPrice" maxWidth="300" promptText="Price" />
+            </VBox>
+        </VBox>
+
+        <!-- Column 1: Loan Info & Details -->
+        <VBox spacing="20" GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <VBox spacing="15">
+                <Label styleClass="sub-header-text" text="Loan Information" />
+                <TextField fx:id="txtDownPayment" promptText="Down Payment" />
+                <ComboBox fx:id="cmbInterest" maxWidth="Infinity" promptText="Interest Rate" />
+                <Slider fx:id="sldMonths" blockIncrement="12" max="96" min="12" showTickLabels="true" showTickMarks="true" />
+                <ComboBox fx:id="cmbFrequency" maxWidth="Infinity" promptText="Frequency" />
+            </VBox>
+            <VBox spacing="15">
+                <Label styleClass="sub-header-text" text="Detailed Loan Information" />
+                <TextArea fx:id="txtLoanDetails" editable="false" prefHeight="76.0" prefWidth="300.0" wrapText="true" />
+            </VBox>
+        </VBox>
+
+        <!-- Button Bar (Spans Column 0 and 1) -->
+        <HBox alignment="CENTER_LEFT" spacing="10" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="1">
+            <Button onAction="#handleCalculate" styleClass="primary-button" text="Calculate" />
+            <Button onAction="#handleClear" styleClass="secondary-button" text="Clear" />
+            <Button onAction="#handleSaveToDatabase" styleClass="primary-button" text="Save" />
+        </HBox>
+
+        <!-- Column 2: Amortization (Spans all rows) -->
+        <VBox spacing="10" GridPane.columnIndex="2" GridPane.rowIndex="0" GridPane.rowSpan="2" VBox.vgrow="ALWAYS">
+            <fx:include fx:id="amorInclude" source="AmortizationView.fxml" />
+        </VBox>
+    </GridPane>
+</VBox>

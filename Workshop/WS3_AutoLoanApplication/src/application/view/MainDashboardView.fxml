@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+
+<BorderPane fx:id="mainLayout" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.MainDashboardController">
+
+  <left>
+
+    <StackPane alignment="CENTER_RIGHT">
+        <!-- Sidebar -->
+        <VBox fx:id="sideMenu" prefWidth="154.0" spacing="10.0" styleClass="sidebar">
+            <Label styleClass="sidebar-title" text="Seneca Auto Loan">
+                <VBox.margin><Insets bottom="20.0" top="10.0" left="10"/></VBox.margin>
+            </Label>
+            <Button fx:id="btnAddLoan" maxWidth="Infinity" onAction="#handleNav" styleClass="nav-button" text="Add Customer/Loan" />
+            <Button fx:id="btnViewCustomers" maxWidth="Infinity" onAction="#handleNav" styleClass="nav-button" text="View Customers" />
+            <VBox VBox.vgrow="ALWAYS" />
+            <Button fx:id="btnLogout" maxWidth="Infinity" onAction="#handleLogout" styleClass="danger-button" text="Logout" />
+        </VBox>
+        
+<Button fx:id="btnToggle" onAction="#toggleMenu" text="←" 
+        style="-fx-pref-width: 50; -fx-pref-height: 50; 
+               -fx-background-color: transparent; 
+               -fx-border-color: transparent; 
+               -fx-font-size: 25px; 
+               -fx-font-weight: bold; 
+               -fx-text-fill: #1A5336; 
+               -fx-cursor: hand;
+               -fx-alignment: center;">
+    <StackPane.margin>
+        <Insets right="-25.0" /> <!-- Pushes the button to center-straddle the edge -->
+    </StackPane.margin>
+</Button>
+    </StackPane>
+</left>
+    <center>
+        <VBox fx:id="contentArea" alignment="CENTER" spacing="10.0" styleClass="content-area">
+            <Label styleClass="header-text" text="Welcome to the Dashboard" />
+            <Label styleClass="body-text" text="Select an option from the menu to get started." />
+        </VBox>
+    </center>
+</BorderPane>

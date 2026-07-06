@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="application.controller.LoanAmortizationController" 
+      spacing="15">
+      
+    <Label text="Amortization Schedule" styleClass="sub-header-text"/>
+    
+    <TableView fx:id="tblAmortization" VBox.vgrow="ALWAYS">
+        <columns>
+      
+            <TableColumn fx:id="colMonth" text="Month" styleClass="align-center" />
+            <TableColumn fx:id="colPrincipal" text="Principal" styleClass="align-right" />
+            <TableColumn fx:id="colInterest" text="Interest" styleClass="align-right" />
+            <TableColumn fx:id="colBalance" text="Balance" styleClass="align-right" />
+        </columns>
+        <!-- Ensure columns expand to fill the table width evenly -->
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+        </columnResizePolicy>
+    </TableView>
+</VBox>
