@@ -1,6 +1,3 @@
-Here's your reflection formatted as a clean **Markdown (`reflect.md`) file.
-
-```markdown
 # Workshop 3 - Reflection
 
 **Student:** Maheswaran  
@@ -67,4 +64,3 @@ Enhance the authentication system by performing real-time repository validation 
 ## Conclusion
 
 This workshop provided valuable hands-on experience applying the MVC architecture, manual dependency injection, JavaFX property binding, and object-oriented design principles in a real-world desktop application. It also highlighted the importance of architectural planning, maintainable code organization, and clear separation of concerns when developing larger software projects.
-```
