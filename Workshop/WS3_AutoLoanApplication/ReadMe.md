@@ -1,4 +1,4 @@
-````markdown
+
 # Auto Loan Application
 
 This project is a **JavaFX-based Auto Loan Application** developed as part of a workshop at **Seneca College**. The application manages user authentication, customer information, vehicle details, loan calculations, and generates amortization schedules using modern software design patterns.
@@ -113,4 +113,4 @@ This workshop includes:
 **Seneca College**  
 **School of Computer Studies**  
 **Workshop 3**
-````
+
